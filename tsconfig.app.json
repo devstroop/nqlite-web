@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    "types": ["vite/client", "node"],
+    "allowArbitraryExtensions": true,
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* @devstroop/react-uikit resolves to the vendor submodule (source),
+       mirroring vite.config.ts aliases */
+    "paths": {
+      "@devstroop/react-uikit": ["./vendor/react-uikit/lib/main.ts"],
+      "@devstroop/react-uikit/style.css": [
+        "./vendor/react-uikit/lib/styles/tokens.css"
+      ],
+      "@devstroop/react-uikit/*": [
+        "./vendor/react-uikit/lib/*",
+        "./vendor/react-uikit/*"
+      ]
+    }
+  },
+  "include": ["src"]
+}

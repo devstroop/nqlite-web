@@ -1,0 +1,4 @@
+[submodule "vendor/react-uikit"]
+	path = vendor/react-uikit
+	url = https://github.com/devstroop/react-uikit.git
+	branch = develop

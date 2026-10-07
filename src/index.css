@@ -1,0 +1,6 @@
+/* Page-level CSS kept to the uikit-native minimum (reetail-admin pattern):
+   everything visual comes from @devstroop/react-uikit components + tokens. */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+}
