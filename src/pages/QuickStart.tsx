@@ -10,13 +10,13 @@ cargo run -q -p nql-cli
 >> SELECT * FROM turn;`;
 
 const PERSIST = `# REPL or script mode backed by one file (WAL sidecar, ACID)
-cargo run -q -p nql-cli -- --db memory.nql
-cargo run -q -p nql-cli -- --db memory.nql --script session.nql
+cargo run -q -p nql-cli -- --db memory.ndb
+cargo run -q -p nql-cli -- --db memory.ndb --script session.nql
 # :flush inside the REPL checkpoints the WAL into the main file`;
 
 const AGENTS = `# MCP server (stdio): execute_nql, create_table, insert_record,
 # relate, forget, select, match_path, closure — deterministic JSON
-cargo run -q -p nql-mcp -- --db memory.nql
+cargo run -q -p nql-mcp -- --db memory.ndb
 
 # Line protocol (TCP or stdio): each line is its own plan starting at
 # the root store — MEMORY must prefix every statement it scopes
@@ -56,7 +56,7 @@ export default function QuickStart() {
         <Markdown value={'```bash\n' + AGENTS + '\n```'} />
         <Markdown
           value={
-            'Add `--db memory.nql` to `nql-server` for a persistent store —\n' +
+            'Add `--db memory.ndb` to `nql-server` for a persistent store —\n' +
             'same single-writer semantics as the CLI.'
           }
         />
